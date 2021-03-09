@@ -30,3 +30,15 @@ BO_ 35 SECONDARY_STEER_ANGLE: 8 XXX
  SG_ ZORRO_STEER : 7|24@0- (0.004901594652,0) [-500|500] "" XXX
 
 CM_ "BO_ SECONDARY_STEER_ANGLE: ZSS is a high-precision steering angle sensor that can replace the lower resolution sensor in most TSS1 Toyotas. Learn more: https://github.com/commaai/openpilot/wiki/Toyota-Lexus#zorro-steering-sensor-zss";
+
+BO_ 523 PANDA_COMMAND: 5 EON
+ SG_ STEER_BY_TORQUE : 0|1@0+ (1,0) [0|1] "Whether the lateral number represents torque or angle" EON
+ SG_ LATERAL : 1|16@0- (1,0) [0|65535] "" XXX
+ SG_ LONGITUDINAL : 17|16@0- (0.001,0) [-20|20] "m/s2 acceleration, to conform to Toyota design (for now)" EON
+ SG_ SELFDRIVE : 33|1@0+ (1,0) [0|15] "Whether selfdrive is engaged" EON
+ SG_ EMERGENCY : 34|1@0+ (1,0) [0|15] "Whether emergency selfdrive is engaged" EON
+
+BO_ 524 TOYOTA_PANDA_COMMAND: 1 EON
+ SG_ MINI_CAR : 21|1@0+ (1,0) [0|1] "" XXX
+ SG_ RELEASE_STANDSTILL : 31|1@0+ (1,0) [0|1] "" HCU
+ SG_ CANCEL_REQ : 24|1@0+ (1,0) [0|1] "" HCU
